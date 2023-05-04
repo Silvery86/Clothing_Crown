@@ -1,44 +1,43 @@
-
-import React from 'react'
-
-import Navbar from './Navbar';
-import Home from './Home';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Create from './Create';
-import BlogDetails from './BlogDetails';
-import NotFound from './NotFound';
-import Game from './Game';
-
-function App() {
-  
- 
+const App = () => {
   return (
-    <Router>
-          <div className="App">
-          <Navbar />
-          <div className="content">
-            <Switch>
-              <Route exact path="/">
-                <Home/>
-              </Route>
-              <Route path="/create">
-                <Create />
-              </Route>
-              <Route path="/blogs/:id">
-                <BlogDetails />
-              </Route>
-              <Route path="/game">
-                <Game />
-              </Route>
-              <Route path="*">
-                <NotFound />
-              </Route>
-            </Switch>
-          </div>
-         </div>
-    </Router>
-    
+    <div className='categories-container'>
+      <div className='category-container'>
+        {/* <img /> */}
+        <div className='category-body-container'>
+          <h2>Hats</h2>
+          <p>Shop Now</p>
+        </div>
+      </div>
+      <div className='category-container'>
+        {/* <img /> */}
+        <div className='category-body-container'>
+          <h2>Jackets</h2>
+          <p>Shop Now</p>
+        </div>
+      </div>
+      <div className='category-container'>
+        {/* <img /> */}
+        <div className='category-body-container'>
+          <h2>Sneakers</h2>
+          <p>Shop Now</p>
+        </div>
+      </div>
+      <div className='category-container'>
+        {/* <img /> */}
+        <div className='category-body-container'>
+          <h2>Womens</h2>
+          <p>Shop Now</p>
+        </div>
+      </div>
+      <div className='category-container'>
+        {/* <img /> */}
+        <div className='category-body-container'>
+          <h2>Mens</h2>
+          <p>Shop Now</p>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
 export default App;
