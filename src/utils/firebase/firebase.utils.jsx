@@ -2,7 +2,6 @@
 import { initializeApp } from "firebase/app";
 import {
     getAuth,
-    signInWithRedirect,
     signInWithPopup,
     GoogleAuthProvider
 } from "firebase/auth";
@@ -37,15 +36,12 @@ provider.setCustomParameters({
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
-
 export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async (userAuth) => {
     const userDocRef = doc(db, 'users', userAuth.uid)
-    console.log(userDocRef);
     const userSnapshot = getDoc(userDocRef);
-    console.log(userSnapshot);
-    console.log((await userSnapshot).exists());
+    
 // Check if users is exist or not
 // if exist just return the userDoc
 // if not create user Doc in database
