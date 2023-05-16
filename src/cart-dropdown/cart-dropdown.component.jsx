@@ -14,7 +14,7 @@ export default function CartDropdown() {
             <CartItem key={item.id} products={item}/>
             ))}
       </div>
-      <Button>GO TO CHECKOUT</Button>
+      <Button>CHECKOUT</Button>
     </div>
   )
 }
