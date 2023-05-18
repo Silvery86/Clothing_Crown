@@ -8,7 +8,7 @@ import CheckOutItem from '../checkout-item/check-out-item.component';
 
 
 export default function CheckOut() {
-    const {cartItems, addItemToCart, removeItemFromCart} = useContext(CartContext);
+    const {cartItems, cartTotal} = useContext(CartContext);
   return (
     <div className='checkout-container'>
         <div className='checkout-header'>
@@ -28,14 +28,10 @@ export default function CheckOut() {
                 <span>Remove</span>
             </div>
         </div>
-        {cartItems.map((cartItem) => {
-        
-            return (
-               <CheckOutItem key={cartItem.id} cartItem={cartItem} />
-            );
-            
-            })}
-            <span className='total'>Total : 0</span>
+        {cartItems.map((cartItem) => 
+        <CheckOutItem key={cartItem.id} cartItem={cartItem} />
+        )}
+            <span className='total'>Total : ${cartTotal}</span>
     </div>
   )
 }
